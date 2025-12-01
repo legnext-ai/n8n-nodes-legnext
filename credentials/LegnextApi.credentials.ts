@@ -10,8 +10,7 @@ export class LegnextApi implements ICredentialType {
 
 	displayName = 'Legnext API';
 
-	// Link to your community node's README
-	documentationUrl = 'https://github.com/org/-legnext?tab=readme-ov-file#credentials';
+	documentationUrl = 'https://github.com/legnext-ai/n8n-nodes-legnext#credentials';
 
 	icon = {
 		light: 'file:legnext.svg',

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Legnext API",
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://legnext.ai",
   "keywords": ["n8n-community-node-package"],
   "author": { "name": "tobias-hui", "email": "huikai@tritonix.cn" },
   "repository": {
