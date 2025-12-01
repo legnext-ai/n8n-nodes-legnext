@@ -2,6 +2,7 @@ import { NodeConnectionTypes, type INodeType, type INodeTypeDescription } from '
 import { imageDescription } from './resources/image';
 import { jobDescription } from './resources/job';
 import { accountDescription } from './resources/account';
+import { videoDescription } from './resources/video';
 
 export class Legnext implements INodeType {
 	description: INodeTypeDescription = {
@@ -45,12 +46,17 @@ export class Legnext implements INodeType {
 						name: 'Job',
 						value: 'job',
 					},
+					{
+						name: 'Video',
+						value: 'video',
+					},
 				],
 				default: 'image',
 			},
 			...accountDescription,
 			...imageDescription,
 			...jobDescription,
+			...videoDescription,
 		],
 	};
 }

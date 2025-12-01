@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { IDataObject, INodeProperties } from 'n8n-workflow';
 
 const showOnlyForImageBlend = {
 	operation: ['blend'],
@@ -36,7 +36,7 @@ export const imageBlendDescription: INodeProperties[] = [
 						}
 
 						requestOptions.body = requestOptions.body || {};
-						(requestOptions.body as any).imgUrls = urlArray;
+						(requestOptions.body as IDataObject).imgUrls = urlArray;
 						return requestOptions;
 					},
 				],
