@@ -1,6 +1,6 @@
 import { NodeConnectionTypes, type INodeType, type INodeTypeDescription } from 'n8n-workflow';
-import { userDescription } from './resources/user';
-import { companyDescription } from './resources/company';
+import { imageDescription } from './resources/image';
+import { jobDescription } from './resources/job';
 
 export class Legnext implements INodeType {
 	description: INodeTypeDescription = {
@@ -19,7 +19,7 @@ export class Legnext implements INodeType {
 		outputs: [NodeConnectionTypes.Main],
 		credentials: [{ name: 'legnextApi', required: true }],
 		requestDefaults: {
-			baseURL: 'https://api.legnext.ai',
+			baseURL: 'https://api.legnext.ai/api/v1',
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
@@ -33,18 +33,18 @@ export class Legnext implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						name: 'User',
-						value: 'user',
+						name: 'Image',
+						value: 'image',
 					},
 					{
-						name: 'Company',
-						value: 'company',
+						name: 'Job',
+						value: 'job',
 					},
 				],
-				default: 'user',
+				default: 'image',
 			},
-			...userDescription,
-			...companyDescription,
+			...imageDescription,
+			...jobDescription,
 		],
 	};
 }
