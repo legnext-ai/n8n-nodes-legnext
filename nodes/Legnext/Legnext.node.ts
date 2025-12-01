@@ -1,6 +1,7 @@
 import { NodeConnectionTypes, type INodeType, type INodeTypeDescription } from 'n8n-workflow';
 import { imageDescription } from './resources/image';
 import { jobDescription } from './resources/job';
+import { accountDescription } from './resources/account';
 
 export class Legnext implements INodeType {
 	description: INodeTypeDescription = {
@@ -33,6 +34,10 @@ export class Legnext implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
+						name: 'Account',
+						value: 'account',
+					},
+					{
 						name: 'Image',
 						value: 'image',
 					},
@@ -43,6 +48,7 @@ export class Legnext implements INodeType {
 				],
 				default: 'image',
 			},
+			...accountDescription,
 			...imageDescription,
 			...jobDescription,
 		],

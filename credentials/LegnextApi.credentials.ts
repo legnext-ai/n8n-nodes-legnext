@@ -41,7 +41,7 @@ export class LegnextApi implements ICredentialType {
 	test: ICredentialTestRequest = {
 		request: {
 			baseURL: 'https://api.legnext.ai',
-			url: '/api/v1/job/test',
+			url: '/api/account/balance',
 		},
 	};
 }
