@@ -58,7 +58,9 @@ jobs:
           fi
 
       - name: Publish to npm
-        run: npm publish --provenance --access public --ignore-scripts
+        run: |
+          # Publish with provenance for security and transparency
+          npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
