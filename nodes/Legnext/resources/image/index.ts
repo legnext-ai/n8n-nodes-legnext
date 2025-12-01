@@ -1,6 +1,7 @@
 import type { INodeProperties } from 'n8n-workflow';
 import { imageImagineDescription } from './imagine';
 import { imageUpscaleDescription } from './upscale';
+import { imageVariationDescription } from './variation';
 
 const showOnlyForImage = {
 	resource: ['image'],
@@ -40,9 +41,22 @@ export const imageDescription: INodeProperties[] = [
 					},
 				},
 			},
+			{
+				name: 'Variation',
+				value: 'variation',
+				action: 'Variation',
+				description: 'Create variations of a selected image, optionally with a remix prompt. Returns a new Job ID.',
+				routing: {
+					request: {
+						method: 'POST',
+						url: '/variation',
+					},
+				},
+			},
 		],
 		default: 'imagine',
 	},
 	...imageImagineDescription,
 	...imageUpscaleDescription,
+	...imageVariationDescription,
 ];
